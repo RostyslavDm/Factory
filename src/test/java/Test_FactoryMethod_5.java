@@ -1,12 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import edu.io.EmptyToken;
-import edu.io.FoodToken;
-import edu.io.GoldToken;
-import edu.io.ShovelToken;
-import edu.io.Token;
-import edu.io.TokenFactoryAlt;
+import edu.io.*;
 import edu.io.TokenFactoryAlt.TokenType;
 
 public class Test_FactoryMethod_5 {
