@@ -4,7 +4,7 @@ public class GoldToken extends Token{
     private int amount;
 
     public GoldToken(int amount){
-        super("");
+        super("G");
         this.amount = amount;
     }
     

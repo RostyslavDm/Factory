@@ -1,34 +1,38 @@
 package edu.io;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TokenFactory {
-    private static EmptyToken emptyToken;
+    private static final Map<Integer, GoldToken> gold = new HashMap<>();
+    private static final Map<Integer, FoodToken> food = new HashMap<>();
+    
     public static EmptyToken createEmptyToken(){
-        if(emptyToken == null){
-            return new EmptyToken();
-        }
-        return emptyToken;
+        return EmptyToken.getInstance();
     }
     public static GoldToken createGoldToken(){
-        return new GoldToken(2);
+        return createGoldToken(2);
     }
 
     public static GoldToken createGoldToken(int amount){
-        return new GoldToken(amount);
+        if(!gold.containsKey(amount)) gold.put(amount, new GoldToken(amount));
+        return gold.get(amount);
     }
 
     public static FoodToken createFoodToken(){
-        return new FoodToken(4);
+        return createFoodToken(4);
     }
 
-    public static FoodToken creaFoodToken(int amount){
-        return new FoodToken(amount);
+    public static FoodToken createFoodToken(int amount){
+        if(!food.containsKey(amount)) food.put(amount, new FoodToken(amount));
+        return food.get(amount);
     }
 
     public static ShovelToken createShovelToken(){
-        return new ShovelToken(3);
+        return createShovelToken(3);
     }
 
-    public static ShovelToken creaShovelToken(int durability){
+    public static ShovelToken createShovelToken(int durability){
         return new ShovelToken(durability);
     }
 }

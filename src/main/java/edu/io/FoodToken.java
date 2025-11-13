@@ -3,7 +3,7 @@ package edu.io;
 public class FoodToken extends Token {
     private int amount;
     public FoodToken(int amount){
-        super("");
+        super("F");
         this.amount = amount;
     }
 
